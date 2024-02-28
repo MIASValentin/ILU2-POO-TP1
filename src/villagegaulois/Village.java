@@ -154,7 +154,16 @@ public class Village {
 	}
 	
 	public Etal rechercherEtal(Gaulois vendeur) {
-		Etal etal = new Etal();
-		return etal;
+		return marche.trouverVendeur(vendeur);
+	}
+	
+	public String partirVendeur(Gaulois vendeur) {
+		StringBuilder chaine = new StringBuilder();
+		chaine.append(this.rechercherEtal(vendeur).libererEtal());
+		return chaine.toString();
+	}
+	
+	public String afficherMarche() {
+		return marche.afficherMarche();
 	}
 }
